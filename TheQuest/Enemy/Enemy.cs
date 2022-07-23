@@ -20,7 +20,7 @@ namespace TheQuest
             HitPoints = hitpoints;
         }
 
-        public virtual void Move(Random random) { }
+        public virtual void Move(Direction dir, Rectangle border) { base.Move(dir, border); }
 
 
     }
