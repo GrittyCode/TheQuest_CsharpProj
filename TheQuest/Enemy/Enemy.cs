@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 namespace TheQuest
 {
-    class Enemy : Mover
+    abstract class Enemy : Mover
     {
         private const int NearPlayerDistance = 25;
 
@@ -20,8 +20,43 @@ namespace TheQuest
             HitPoints = hitpoints;
         }
 
-        public virtual void Move(Direction dir, Rectangle border) { base.Move(dir, border); }
+        public abstract void Move(Random rand);
+        
+        public void Hit(int maxDamage, Random rand)
+        {
+            HitPoints -= rand.Next(1, maxDamage);
+        }
 
+        protected bool NearPlayer()
+        {
+            return (Nearby(game.playerLocation, NearPlayerDistance));
+        }
+
+        protected Direction FindPlayerDierection(Point playerLocation)
+        {
+            Direction dir;
+            //오른쪽에 플레이어가 있다면
+            if (playerLocation.X > location.X + 10)
+            {
+                dir = Direction.Right;
+            }
+            //왼쪽
+            else if (playerLocation.X  < Location.X - 10)
+            {
+                dir = Direction.Left;
+            }
+            else if (playerLocation.Y < location.Y - 10)
+            {
+                dir = Direction.Up;
+            }
+            else
+            {
+                dir = Direction.Down;
+            }
+
+            return dir;
+        }
+        
 
     }
 }

@@ -28,6 +28,16 @@ namespace TheQuest
         {
             Picture_Player.Location = game.playerLocation;
             Picture_Player.Visible = true;
+            label_Player_HitPoints.Text = game.playerHealth.ToString();
+
+            foreach(Enemy enemy in game.Enemies)
+            {
+                Picture_Bat.Location = enemy.Location;
+                Picture_Bat.Visible = true;
+            }
+
+            Picture_Sword.Visible = true;
+            Picture_Sword.Location = game.WeaponInRoom.Location;
         }
         private void Table_Hit_Point_Paint(object sender, PaintEventArgs e)
         {
@@ -84,6 +94,11 @@ namespace TheQuest
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

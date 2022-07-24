@@ -31,8 +31,11 @@ namespace TheQuest
         public void Move(Direction dir, Random rand)
         {
             m_player.Move(dir);
+            foreach(Enemy enemy in Enemies)
+            {
+                enemy.Move(rand);
+            }
         }
-
         private Point GetRandomLocation(Random random)
         {
             return new Point(boundaries.Left + random.Next(boundaries.Right / 10 - boundaries.Left / 10) * 10,
@@ -48,12 +51,40 @@ namespace TheQuest
                     {
                         Enemies = new List<Enemy>()
                         { new Bat(this, GetRandomLocation(random))};
-
+                        WeaponInRoom = new Sword(this,GetRandomLocation(random));
                     }
                     break;
             
             }
 
         }
+        public void Equip(string weaponName)
+        {
+            m_player.Equip(weaponName);
+        }
+        public bool CheckPlayerInventory(string weaponName)
+        {
+            return m_player.Weapons.Contains(weaponName);
+        }
+
+        public void HitPlayer(int maxDamage, Random random)
+        {
+            m_player.Hit(maxDamage, random);
+        }
+        
+        public void IncreasPlayerHealth(int health, Random rand)
+        {
+            m_player.IncreaseHP(health, rand);
+        }
+
+        public void Attack(Direction dir, Random rand)
+        {
+            m_player.Attack(dir, rand);
+            foreach(Enemy enemy in Enemies)
+            {
+                enemy.Move(rand);
+            }
+        }
+
     }
 }

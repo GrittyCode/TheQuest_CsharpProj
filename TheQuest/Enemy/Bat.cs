@@ -14,44 +14,25 @@ namespace TheQuest
             MaxDamage = 2;
         }
 
-        public override void Move(Direction dir, Rectangle border)
+        public override void Move(Random rand)
         {
-           // int rand = random.Next(1);
-           /*
-            * 
-            * 
-            * 
-            if(rand == 0)
+            int randIdx = rand.Next(0,2);
+
+            if(randIdx == 0)
             {
-                //오른쪽에 플레이어가 있다면
-                if(game.playerLocation.X - base.Location.X < 0)
-                {
-                    base.Move(Direction.Right, game.Boundaries); 
-                }
-                //왼쪽
-                else if(game.playerLocation.X - base.Location.X > 0)
-                {
-                    base.Move(Direction.Left, game.Boundaries);
-
-                }
-                //위에
-                else if(game.playerLocation.Y - base.location.Y > 0)
-                {
-                    base.Move(Direction.Up, game.Boundaries);
-
-                }
-                //아래
-                else if (game.playerLocation.Y - base.location.Y < 0)
-                {
-                    base.Move(Direction.Down, game.Boundaries);
-                }
+                Direction dir =  base.FindPlayerDierection(game.playerLocation);
+                location = Move(dir, game.Boundaries);
             }
             else
             {
-                int dir = random.Next((int)Direction.Right + 1) - 1;
-                base.Move((Direction)dir, game.Boundaries);
+                Direction dir = (Direction)rand.Next((int)Direction.Up,(int)Direction.Right);
+                location = Move(dir, game.Boundaries);
             }
-           */
+
+            if(NearPlayer())
+            {
+                game.HitPlayer(MaxDamage, rand);
+            }
         }
     }
 }

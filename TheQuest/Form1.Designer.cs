@@ -520,6 +520,7 @@ namespace TheQuest
             this.Controls.Add(this.Table_Hit_Point);
             this.Name = "Form1";
             this.Text = "The Quest";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Table_Hit_Point.ResumeLayout(false);
             this.Table_Hit_Point.PerformLayout();
             this.MoveBox.ResumeLayout(false);
