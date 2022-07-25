@@ -8,7 +8,7 @@ namespace TheQuest
 {
     class Player : Mover
     {
-        private Weapon equippedWeapon;
+        private Weapon equippedWeapon = null;
         private int hitPoints;
         //프로퍼티를 통한 힛 포인트 관리
         public int HitPoints { get { return hitPoints; } }
@@ -21,7 +21,24 @@ namespace TheQuest
                 List<string> names = new List<string>();
 
                 foreach (Weapon weapon in inventory)
-                    names.Add(weapon.Name);
+                {
+                    if(weapon is RedPotion)
+                    {
+                        RedPotion potion = weapon as RedPotion;
+                        if (!potion.Used)
+                            names.Add(weapon.Name);
+                    }
+                    else if(weapon is BluePotion)
+                    {
+
+                        BluePotion potion = weapon as BluePotion;
+                        if (!potion.Used)
+                            names.Add(weapon.Name);
+                    }
+                    else
+                        names.Add(weapon.Name);
+                }
+                   
 
                 return names;
             }
@@ -64,13 +81,24 @@ namespace TheQuest
                 if (Nearby(game.WeaponInRoom.Location, 10))
                 {
                     game.WeaponInRoom.PickUpWeapon();
+                    inventory.Add(game.WeaponInRoom);
+                }            
+            }
+
+            foreach (Weapon item in game.ItemInRoom)
+            {
+                if (Nearby(item.Location, 10))
+                {
+                    item.PickUpWeapon();
+                    inventory.Add(item);
                 }
             }
         }
 
         public void Attack(Direction dir, Random rand)
         {
-
+            if(equippedWeapon != null)
+                equippedWeapon.Attack(dir, rand);
         }
     }
 }

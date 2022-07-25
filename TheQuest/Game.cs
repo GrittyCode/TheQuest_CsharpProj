@@ -15,6 +15,8 @@ namespace TheQuest
         public IEnumerable<Enemy> Enemies { get; private set; }
         public Weapon WeaponInRoom { get; private set; }
 
+        public List<Weapon> ItemInRoom = new List<Weapon>();
+
         private Rectangle boundaries;
         public Rectangle Boundaries { get { return boundaries; } }
 
@@ -44,6 +46,10 @@ namespace TheQuest
 
         public void NewLevel(Random random)
         {
+            ItemInRoom.Clear();
+            WeaponInRoom = null;
+            m_player.inventory.Clear();
+
             level++;
             switch (level)
             {
@@ -52,6 +58,7 @@ namespace TheQuest
                         Enemies = new List<Enemy>()
                         { new Bat(this, GetRandomLocation(random))};
                         WeaponInRoom = new Sword(this,GetRandomLocation(random));
+                        ItemInRoom.Add(new RedPotion(this, GetRandomLocation(random)));
                     }
                     break;
             

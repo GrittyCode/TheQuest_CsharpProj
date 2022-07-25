@@ -58,11 +58,11 @@ namespace TheQuest
             this.Picture_Red_potion = new System.Windows.Forms.PictureBox();
             this.Picture_Blue_Potion = new System.Windows.Forms.PictureBox();
             this.Picture_Mace = new System.Windows.Forms.PictureBox();
-            this.Picture_Inventory_1 = new System.Windows.Forms.PictureBox();
-            this.Picture_Inventory_5 = new System.Windows.Forms.PictureBox();
-            this.Picture_Inventory_4 = new System.Windows.Forms.PictureBox();
-            this.Picture_Inventory_3 = new System.Windows.Forms.PictureBox();
-            this.Picture_Inventory_2 = new System.Windows.Forms.PictureBox();
+            this.Picture_Inventory_Sword = new System.Windows.Forms.PictureBox();
+            this.Picture_Inventory_Mace = new System.Windows.Forms.PictureBox();
+            this.Picture_Inventory_BluePotion = new System.Windows.Forms.PictureBox();
+            this.Picture_Inventory_Bow = new System.Windows.Forms.PictureBox();
+            this.Picture_Inventory_RedPotion = new System.Windows.Forms.PictureBox();
             this.Table_Hit_Point.SuspendLayout();
             this.MoveBox.SuspendLayout();
             this.AttackBox.SuspendLayout();
@@ -75,11 +75,11 @@ namespace TheQuest
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Red_potion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Blue_Potion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Mace)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_Sword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_Mace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_BluePotion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_Bow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_RedPotion)).BeginInit();
             this.SuspendLayout();
             // 
             // Table_Hit_Point
@@ -275,6 +275,8 @@ namespace TheQuest
             this.Button_Attack_Right.TabIndex = 7;
             this.Button_Attack_Right.Text = "Right";
             this.Button_Attack_Right.UseVisualStyleBackColor = false;
+            this.Button_Attack_Right.Click += new System.EventHandler(this.Button_Attack_Right_Click);
+
             // 
             // Button_Attack_Up
             // 
@@ -286,6 +288,8 @@ namespace TheQuest
             this.Button_Attack_Up.TabIndex = 4;
             this.Button_Attack_Up.Text = "Up";
             this.Button_Attack_Up.UseVisualStyleBackColor = false;
+            this.Button_Attack_Up.Click += new System.EventHandler(this.Button_Attack_Up_Click);
+
             // 
             // Button_Attack_Left
             // 
@@ -296,6 +300,8 @@ namespace TheQuest
             this.Button_Attack_Left.TabIndex = 6;
             this.Button_Attack_Left.Text = "Left";
             this.Button_Attack_Left.UseVisualStyleBackColor = false;
+            this.Button_Attack_Left.Click += new System.EventHandler(this.Button_Attack_Left_Click);
+
             // 
             // Button_Attack_Down
             // 
@@ -306,6 +312,8 @@ namespace TheQuest
             this.Button_Attack_Down.TabIndex = 5;
             this.Button_Attack_Down.Text = "Down";
             this.Button_Attack_Down.UseVisualStyleBackColor = false;
+            this.Button_Attack_Down.Click += new System.EventHandler(this.Button_Attack_Down_Click);
+
             // 
             // Picture_Player
             // 
@@ -424,75 +432,75 @@ namespace TheQuest
             this.Picture_Mace.TabStop = false;
             this.Picture_Mace.Visible = false;
             // 
-            // Picture_Inventory_1
+            // Picture_Inventory_Sword
             // 
-            this.Picture_Inventory_1.BackColor = System.Drawing.Color.Transparent;
-            this.Picture_Inventory_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Picture_Inventory_1.Image = global::TheQuest.Properties.Resources.sword;
-            this.Picture_Inventory_1.Location = new System.Drawing.Point(90, 321);
-            this.Picture_Inventory_1.Name = "Picture_Inventory_1";
-            this.Picture_Inventory_1.Size = new System.Drawing.Size(50, 50);
-            this.Picture_Inventory_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Picture_Inventory_1.TabIndex = 19;
-            this.Picture_Inventory_1.TabStop = false;
-            this.Picture_Inventory_1.Visible = false;
-            this.Picture_Inventory_1.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.Picture_Inventory_Sword.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Inventory_Sword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Picture_Inventory_Sword.Image = global::TheQuest.Properties.Resources.sword;
+            this.Picture_Inventory_Sword.Location = new System.Drawing.Point(90, 321);
+            this.Picture_Inventory_Sword.Name = "Picture_Inventory_Sword";
+            this.Picture_Inventory_Sword.Size = new System.Drawing.Size(50, 50);
+            this.Picture_Inventory_Sword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Picture_Inventory_Sword.TabIndex = 19;
+            this.Picture_Inventory_Sword.TabStop = false;
+            this.Picture_Inventory_Sword.Visible = false;
+            this.Picture_Inventory_Sword.Click += new System.EventHandler(this.Picture_Inventory_Sword_Click);
             // 
-            // Picture_Inventory_5
+            // Picture_Inventory_Mace
             // 
-            this.Picture_Inventory_5.BackColor = System.Drawing.Color.Transparent;
-            this.Picture_Inventory_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Picture_Inventory_5.Image = global::TheQuest.Properties.Resources.mace;
-            this.Picture_Inventory_5.Location = new System.Drawing.Point(330, 320);
-            this.Picture_Inventory_5.Name = "Picture_Inventory_5";
-            this.Picture_Inventory_5.Size = new System.Drawing.Size(50, 50);
-            this.Picture_Inventory_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Picture_Inventory_5.TabIndex = 20;
-            this.Picture_Inventory_5.TabStop = false;
-            this.Picture_Inventory_5.Visible = false;
-            this.Picture_Inventory_5.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.Picture_Inventory_Mace.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Inventory_Mace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Picture_Inventory_Mace.Image = global::TheQuest.Properties.Resources.mace;
+            this.Picture_Inventory_Mace.Location = new System.Drawing.Point(330, 320);
+            this.Picture_Inventory_Mace.Name = "Picture_Inventory_Mace";
+            this.Picture_Inventory_Mace.Size = new System.Drawing.Size(50, 50);
+            this.Picture_Inventory_Mace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Picture_Inventory_Mace.TabIndex = 20;
+            this.Picture_Inventory_Mace.TabStop = false;
+            this.Picture_Inventory_Mace.Visible = false;
+            this.Picture_Inventory_Mace.Click += new System.EventHandler(this.Picture_Inventory_Mace_Click);
             // 
-            // Picture_Inventory_4
+            // Picture_Inventory_BluePotion
             // 
-            this.Picture_Inventory_4.BackColor = System.Drawing.Color.Transparent;
-            this.Picture_Inventory_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Picture_Inventory_4.Image = global::TheQuest.Properties.Resources.potion_blue;
-            this.Picture_Inventory_4.Location = new System.Drawing.Point(270, 320);
-            this.Picture_Inventory_4.Name = "Picture_Inventory_4";
-            this.Picture_Inventory_4.Size = new System.Drawing.Size(50, 50);
-            this.Picture_Inventory_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Picture_Inventory_4.TabIndex = 21;
-            this.Picture_Inventory_4.TabStop = false;
-            this.Picture_Inventory_4.Visible = false;
-            this.Picture_Inventory_4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.Picture_Inventory_BluePotion.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Inventory_BluePotion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Picture_Inventory_BluePotion.Image = global::TheQuest.Properties.Resources.potion_blue;
+            this.Picture_Inventory_BluePotion.Location = new System.Drawing.Point(270, 320);
+            this.Picture_Inventory_BluePotion.Name = "Picture_Inventory_BluePotion";
+            this.Picture_Inventory_BluePotion.Size = new System.Drawing.Size(50, 50);
+            this.Picture_Inventory_BluePotion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Picture_Inventory_BluePotion.TabIndex = 21;
+            this.Picture_Inventory_BluePotion.TabStop = false;
+            this.Picture_Inventory_BluePotion.Visible = false;
+            this.Picture_Inventory_BluePotion.Click += new System.EventHandler(this.Picture_Inventory_BluePotion_Click);
             // 
-            // Picture_Inventory_3
+            // Picture_Inventory_Bow
             // 
-            this.Picture_Inventory_3.BackColor = System.Drawing.Color.Transparent;
-            this.Picture_Inventory_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Picture_Inventory_3.Image = global::TheQuest.Properties.Resources.bow;
-            this.Picture_Inventory_3.Location = new System.Drawing.Point(210, 321);
-            this.Picture_Inventory_3.Name = "Picture_Inventory_3";
-            this.Picture_Inventory_3.Size = new System.Drawing.Size(50, 50);
-            this.Picture_Inventory_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Picture_Inventory_3.TabIndex = 22;
-            this.Picture_Inventory_3.TabStop = false;
-            this.Picture_Inventory_3.Visible = false;
-            this.Picture_Inventory_3.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.Picture_Inventory_Bow.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Inventory_Bow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Picture_Inventory_Bow.Image = global::TheQuest.Properties.Resources.bow;
+            this.Picture_Inventory_Bow.Location = new System.Drawing.Point(210, 321);
+            this.Picture_Inventory_Bow.Name = "Picture_Inventory_Bow";
+            this.Picture_Inventory_Bow.Size = new System.Drawing.Size(50, 50);
+            this.Picture_Inventory_Bow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Picture_Inventory_Bow.TabIndex = 22;
+            this.Picture_Inventory_Bow.TabStop = false;
+            this.Picture_Inventory_Bow.Visible = false;
+            this.Picture_Inventory_Bow.Click += new System.EventHandler(this.Picture_Inventory_Bow_Click);
             // 
-            // Picture_Inventory_2
+            // Picture_Inventory_RedPotion
             // 
-            this.Picture_Inventory_2.BackColor = System.Drawing.Color.Transparent;
-            this.Picture_Inventory_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Picture_Inventory_2.Image = global::TheQuest.Properties.Resources.potion_red;
-            this.Picture_Inventory_2.Location = new System.Drawing.Point(150, 321);
-            this.Picture_Inventory_2.Name = "Picture_Inventory_2";
-            this.Picture_Inventory_2.Size = new System.Drawing.Size(50, 50);
-            this.Picture_Inventory_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Picture_Inventory_2.TabIndex = 23;
-            this.Picture_Inventory_2.TabStop = false;
-            this.Picture_Inventory_2.Visible = false;
-            this.Picture_Inventory_2.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.Picture_Inventory_RedPotion.BackColor = System.Drawing.Color.Transparent;
+            this.Picture_Inventory_RedPotion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Picture_Inventory_RedPotion.Image = global::TheQuest.Properties.Resources.potion_red;
+            this.Picture_Inventory_RedPotion.Location = new System.Drawing.Point(150, 321);
+            this.Picture_Inventory_RedPotion.Name = "Picture_Inventory_RedPotion";
+            this.Picture_Inventory_RedPotion.Size = new System.Drawing.Size(50, 50);
+            this.Picture_Inventory_RedPotion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Picture_Inventory_RedPotion.TabIndex = 23;
+            this.Picture_Inventory_RedPotion.TabStop = false;
+            this.Picture_Inventory_RedPotion.Visible = false;
+            this.Picture_Inventory_RedPotion.Click += new System.EventHandler(this.Picture_Inventory_RedPotion_Click);
             // 
             // Form1
             // 
@@ -501,11 +509,11 @@ namespace TheQuest
             this.BackgroundImage = global::TheQuest.Properties.Resources.dungeon600x400;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(797, 401);
-            this.Controls.Add(this.Picture_Inventory_2);
-            this.Controls.Add(this.Picture_Inventory_3);
-            this.Controls.Add(this.Picture_Inventory_4);
-            this.Controls.Add(this.Picture_Inventory_5);
-            this.Controls.Add(this.Picture_Inventory_1);
+            this.Controls.Add(this.Picture_Inventory_RedPotion);
+            this.Controls.Add(this.Picture_Inventory_Bow);
+            this.Controls.Add(this.Picture_Inventory_BluePotion);
+            this.Controls.Add(this.Picture_Inventory_Mace);
+            this.Controls.Add(this.Picture_Inventory_Sword);
             this.Controls.Add(this.Picture_Player);
             this.Controls.Add(this.Picture_Mace);
             this.Controls.Add(this.Picture_Blue_Potion);
@@ -534,11 +542,11 @@ namespace TheQuest
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Red_potion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Blue_Potion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Mace)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_Sword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_Mace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_BluePotion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_Bow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Inventory_RedPotion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -574,11 +582,11 @@ namespace TheQuest
         private System.Windows.Forms.PictureBox Picture_Red_potion;
         private System.Windows.Forms.PictureBox Picture_Blue_Potion;
         private System.Windows.Forms.PictureBox Picture_Mace;
-        private System.Windows.Forms.PictureBox Picture_Inventory_1;
-        private System.Windows.Forms.PictureBox Picture_Inventory_5;
-        private System.Windows.Forms.PictureBox Picture_Inventory_4;
-        private System.Windows.Forms.PictureBox Picture_Inventory_3;
-        private System.Windows.Forms.PictureBox Picture_Inventory_2;
+        private System.Windows.Forms.PictureBox Picture_Inventory_Sword;
+        private System.Windows.Forms.PictureBox Picture_Inventory_Mace;
+        private System.Windows.Forms.PictureBox Picture_Inventory_BluePotion;
+        private System.Windows.Forms.PictureBox Picture_Inventory_Bow;
+        private System.Windows.Forms.PictureBox Picture_Inventory_RedPotion;
     }
 }
 
